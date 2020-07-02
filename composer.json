@@ -1,0 +1,43 @@
+{
+    "name": "dynamikaweb/yii2-adaptive-menu",
+    "description": "widget adaptive and responsive menu html",
+    "type": "yii2-extension",
+    "keywords": [
+        "dynamika",
+        "yii",
+        "yii2",
+        "yii 2",
+        "widget",
+        "menu",
+        "responsive",
+        "adaptive-menu"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "RodrigoDornelles",
+            "email": "rodrigo@dornelles.me",
+            "role": "Developer"
+        },
+        {
+            "name": "AlvaroAlcatelli",
+            "email": "alvaro@dynamika.com.br",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "http://github.com/dynamikaweb/yii2-adaptive-menu/issues",
+        "source": "http://github.com/dynamikaweb/yii2-adaptive-menu"
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "yiisoft/yii2": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": false,
+    "autoload": {
+        "psr-4": {
+            "dynamikaweb\\": "src"
+        }
+    }
+}
