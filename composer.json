@@ -1,8 +1,8 @@
 {
-    "name": "dynamikaweb/yii2-template",
-    "description": "",
+    "name": "dynamikaweb/yii2-adaptive-menu",
+    "description": "Complex, adaptable, responsive and self-correcting menu.",
     "type": "yii2-extension",
-    "keywords": ["dynamika", "yii2"],
+    "keywords": ["dynamika", "yii2", "menu"],
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -17,8 +17,8 @@
         }
     ],
     "support": {
-        "issues": "http://github.com/dynamikaweb/yii2-template/issues",
-        "source": "http://github.com/dynamikaweb/yii2-template"
+        "issues": "http://github.com/dynamikaweb/yii2-adaptive-menu/issues",
+        "source": "http://github.com/dynamikaweb/yii2-adaptive-menu"
     },
     "require": {
         "php": ">=7.0",
@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "dynamikaweb\\": "src"
+            "dynamikaweb\\adaptive\\": "src"
         }
     },
     "repositories": [
