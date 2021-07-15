@@ -23,21 +23,23 @@ class Menu extends \yii\base\Widget
     public function run()
     {
         $this->_asset = MenuAsset::register($this->view);
-        $items = $this->normalizeItems($this->items);
-
         echo "\n";
         echo $this->renderFile('forest', [
-            'items' => $this->renderItems($items, self::NIVEL_ROOT),
+            'items' => $this->renderItems($this->normalizeItems(), self::NIVEL_ROOT),
             'id' => $this->getId(),
         ]);
     }
 
-    public function normalizeItems($originalRoots)
+    public function normalizeItems()
     {
         $newRoots = [];
 
+        if (empty($this->items)) {
+            return [];
+        }
+
         // generate new roots
-        foreach ($originalRoots as $oldRoot)
+        foreach ($this->items as $oldRoot)
         {
             $oldRoot['items'] = ArrayHelper::getValue($oldRoot, 'items', []);
             $label = ArrayHelper::getValue($oldRoot, 'encode', true)? Html::encode($oldRoot['label']): $oldRoot['label'];
@@ -53,14 +55,15 @@ class Menu extends \yii\base\Widget
                     'label' => $label,
                     'url' => $url,
                     'slug' => '_auto',
-                    'content' => $oldRoot['content']
+                    'content' => $oldRoot['content'],
+                    'items' => []
                 ];
             }
 
             // create sub menus
             foreach ($oldRoot['items'] as $oldSub) {
                 // sub menu is a final link?
-                if(!isset($oldSub['items'])){ 
+                if(empty($oldSub['items'])){ 
                     // last menu is no automatic or bigger
                     if((isset($newSubs[array_key_last($newSubs)]['items']) && count($newSubs[array_key_last($newSubs)]['items']) >= $this->maxItems)
                         || current($newSubs)['slug'] !== '_auto') {
@@ -134,7 +137,7 @@ class Menu extends \yii\base\Widget
                 return implode("\n", array_map(fn($item) => $this->renderFile('sub', [
                     'items' => $this->renderItems($item['items'], self::NIVEL_URL),
                     'content' => empty($item['content'])? null: Html::tag('p', $item['content']),
-                    'label' => empty($item['label'])? null: Html::a($item['label']),                    
+                    'label' => empty($item['label'])? null: Html::a("<h3>{$item['label']}</h3>", $item['url']),                    
                     'slug' => $item['slug']
                 ]), 
                     $items
