@@ -49,7 +49,7 @@ class Menu extends \yii\base\Widget
             $newSubs = [];
 
             // automatic content root has a new sub menu
-            if (isset($oldRoot['content'])) {
+            if (!empty($oldRoot['content'])) {
                 $url = 'javascript:;';
                 $newSubs[] = [
                     'label' => $label,
