@@ -1,0 +1,46 @@
+
+.dynamika-menu-nav-forest {
+	width:100%;
+}
+
+.dynamika-menu-ul-forest {
+	list-style: none;
+	margin:0;
+	padding:0;
+	position: relative;
+	flex-direction:row;
+	display:flex;
+	justify-content: space-between;
+}
+
+.dynamika-menu-li-root {
+	display:flex;
+	flex-direction:row;
+	flex-grow: 1;
+	text-align:center;
+	cursor:pointer;
+}
+
+.dynamika-menu-span-items {
+	display:flex;
+	top:100%;
+	left:0;
+	right:0;
+	position:absolute;
+	visibility: hidden;
+	z-index:1;
+}
+
+.dynamika-menu-li-root:hover .dynamika-menu-span-items {
+	visibility: visible;
+}
+
+.dynamika-menu-span-sub {
+	display:flex;
+	flex-direction: row;
+	flex-grow:1;
+}
+
+.dynamika-menu-span-sub {
+	flex-direction: column;
+}

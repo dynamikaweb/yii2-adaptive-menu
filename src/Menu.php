@@ -124,7 +124,7 @@ class Menu extends \yii\base\Widget
         {
             case self::NIVEL_ROOT: {
                 return implode("\n", array_map(fn($item) => $this->renderFile('root', [
-                    'items' => $this->renderItems($item['items'], self::NIVEL_SUB),
+                    'items' => empty($item['items'])? null: Html::tag('span', $this->renderItems($item['items'], self::NIVEL_SUB), ['class' => 'dynamika-menu-span-items']),
                     'target' => $item['target'],
                     'label' => $item['label'],
                     'slug' => $item['slug'],
