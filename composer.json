@@ -20,7 +20,7 @@
         "issues": "http://github.com/dynamikaweb/yii2-adaptive-menu/issues",
         "source": "http://github.com/dynamikaweb/yii2-adaptive-menu"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
         "yiisoft/yii2": "*"
