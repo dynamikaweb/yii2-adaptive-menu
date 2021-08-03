@@ -65,8 +65,8 @@ class Menu extends \yii\base\Widget
                 // sub menu is a final link?
                 if(empty($oldSub['items'])){ 
                     // last menu is no automatic or bigger
-                    if((isset($newSubs[array_key_last($newSubs)]['items']) && count($newSubs[array_key_last($newSubs)]['items']) >= $this->maxItems)
-                        || current($newSubs)['slug'] !== '_auto') {
+                    if((empty($newSubs) || (isset($newSubs[array_key_last($newSubs)]['items']) && count($newSubs[array_key_last($newSubs)]['items']) >= $this->maxItems)
+                        || current($newSubs)['slug'] !== '_auto')) {
                         $newSubs[] = ['slug' => '_auto', 'url' => 'javascript:;'];
                     }
                     // add menu as link
