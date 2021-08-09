@@ -1,10 +1,10 @@
-dynamikaweb/yii2-template
+dynamikaweb/yii2-adaptive-menu
 =========================
-![php version](https://img.shields.io/packagist/php-v/dynamikaweb/yii2-template)
-![pkg version](https://img.shields.io/packagist/v/dynamikaweb/yii2-template)
-![license](https://img.shields.io/packagist/l/dynamikaweb/yii2-template)
-![quality](https://img.shields.io/scrutinizer/quality/g/dynamikaweb/yii2-template)
-![build](https://img.shields.io/scrutinizer/build/g/dynamikaweb/yii2-template)
+![php version](https://img.shields.io/packagist/php-v/dynamikaweb/yii2-adaptive-menu)
+![pkg version](https://img.shields.io/packagist/v/dynamikaweb/yii2-adaptive-menu)
+![license](https://img.shields.io/packagist/l/dynamikaweb/yii2-adaptive-menu)
+![quality](https://img.shields.io/scrutinizer/quality/g/dynamikaweb/yii2-adaptive-menu)
+![build](https://img.shields.io/scrutinizer/build/g/dynamikaweb/yii2-adaptive-menu)
 
 Installation
 ------------
@@ -13,13 +13,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```SHELL
-$ composer require dynamikaweb/yii2-template "*"
+$ composer require dynamikaweb/yii2-adaptive-menu "*"
 ```
 
 or add
 
 ```JSON
-"dynamikaweb/yii2-template": "*"
+"dynamikaweb/yii2-adaptive-menu": "*"
 ```
 
 to the `require` section of your `composer.json` file.
