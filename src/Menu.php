@@ -82,6 +82,7 @@ class Menu extends \yii\base\Widget
                 $newSubs[] = [
                     'slug' => Inflector::slug(ArrayHelper::getValue($oldSub, 'label', '_none')),
                     'url' => ArrayHelper::getValue($oldSub, 'url', 'javascript:;'),
+                    'content' => ArrayHelper::getValue($oldSub, 'content', null),
                     'label' => ArrayHelper::getValue($oldSub, 'label', null),
                     'items' => []
                 ];
