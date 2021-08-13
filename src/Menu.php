@@ -63,7 +63,7 @@ class Menu extends \yii\base\Widget
             // create sub menus
             foreach ($oldRoot['items'] as $oldSub) {
                 // sub menu is a final link?
-                if(empty($oldSub['items'])){ 
+                if(empty($oldSub['items']) && empty($oldSub['content'])){ 
                     // last menu is no automatic or bigger
                     if((empty($newSubs) || (isset($newSubs[array_key_last($newSubs)]['items']) && count($newSubs[array_key_last($newSubs)]['items']) >= $this->maxItems)
                         || current($newSubs)['slug'] !== '_auto')) {
