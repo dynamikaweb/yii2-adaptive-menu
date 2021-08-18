@@ -44,3 +44,116 @@
 .dynamika-menu-span-sub {
 	flex-direction: column;
 }
+
+/* MENU RESPONSIVO */
+@media (min-width: 320px) and (max-width: 767px) {
+	.dynamika-menu-nav-forest {
+		width:100%;
+	}
+	
+	.dynamika-menu-ul-forest {
+		list-style: initial !important;
+		margin:0;
+		padding: 0;
+		position: relative;
+		flex-direction: row;
+		display:flex;
+		justify-content: space-between;
+	}
+	
+	.dynamika-menu-li-root {
+		display:flex;
+		flex-direction:column;
+		flex-grow: 1;
+		text-align:center;
+		cursor:pointer;
+	}
+	
+	.dynamika-menu-span-items {
+		display:initial !important;
+		top:100%;
+		left:0;/*novo*/
+		right:0;/*novo*/
+		position:initial !important; /*problema*/
+		display: none;
+		z-index: 1;
+	}
+
+	.dynamika-menu-li-root:hover .dynamika-menu-span-items {
+		display: block  !important;
+	}
+	
+	.dynamika-menu-span-sub {
+		display:flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
+	
+	.dynamika-menu-span-sub {
+		flex-direction: column;
+	}
+	
+	
+	#box-menu{
+		position: relative;
+		min-width: 100%;
+		flex-direction:column !important;
+	}
+
+	#box-menu .container-fluid{
+		padding-right:3% !important;
+   		padding-left:3% !important;
+   		margin-right:auto;
+   		margin-left:auto;
+	}
+
+	.dynamika-menu-ul-forest li a{
+		color:#000 !important;
+ 		text-align:left;
+	}
+
+	.dynamika-menu-ul-forest > li:hover a{
+		color:#000 !important;
+	}
+
+	.dynamika-menu-nav-forest .dynamika-menu-ul-forest{
+		display:flex;
+		flex-direction:column !important;
+	}
+
+	.dynamika-menu-nav-forest .dynamika-menu-ul-forest .dynamika-menu-li-root{
+		flex-basis: unset !important;
+	}
+
+	.dynamika-menu-nav-forest .dynamika-menu-li-root:hover ul{
+		display:block !important;
+	}
+
+	.dynamika-menu-nav-forest > .dynamika-menu-li-root > .dynamika-menu-a-root{
+		height:40px !important;
+ 		border-bottom:1px solid rgba(255,255,255,.2) !important;
+	}
+
+	.dynamika-menu-nav-forest .dynamika-menu-li-root ul{
+		position: unset !important;
+ 		top:auto !important;
+ 		height:auto !important;
+		display: block !important;
+	}
+
+	.dynamika-menu-nav-forest .dynamika-menu-li-root ul a{
+		font-size:.95em;
+ 		text-align:left !important;
+ 		width:100%;
+	}
+
+	.dynamika-menu-span-items{
+		visibility: initial !important;
+		display: none !important ;
+	}
+
+	.dynamika-menu-li-root:hover .dynamika-menu-span-items{
+		display: none;
+	}
+}
+
