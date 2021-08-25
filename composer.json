@@ -23,7 +23,8 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.0",
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "composer-runtime-api": "*"
     },
     "autoload": {
         "psr-4": {
