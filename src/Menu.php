@@ -2,9 +2,11 @@
 
 namespace dynamikaweb\adaptive;
 
+use Composer\InstalledVersions as Composer;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 use yii\helpers\Html;
+use Yii;
 
 class Menu extends \yii\base\Widget 
 {
@@ -16,20 +18,37 @@ class Menu extends \yii\base\Widget
     public $maxItems = 5;
 
     private $_asset;
+    private $_key_cache;
 
     /**
      * Renders the menu.
      */
     public function run()
     {
+        /** config widget */
         $this->_asset = MenuAsset::register($this->view);
-        echo "\n";
-        echo $this->renderFile('forest', [
+        $this->_key_cache = $this->generateHash();
+        
+        /** retrieve content from cache */
+        if (Yii::$app->cache->exists($this->_key_cache)) {
+            echo Yii::$app->cache->get($this->_key_cache);
+            return;
+        }
+
+        /** render widget */
+        $content = $this->renderFile('forest', [
             'items' => $this->renderItems($this->normalizeItems(), self::NIVEL_ROOT),
             'id' => $this->getId(),
         ]);
+
+        /** storage content in cache and print */
+        Yii::$app->cache->set($this->_key_cache, $content);        
+        echo $content;
     }
 
+    /**
+     * @return array
+     */
     public function normalizeItems()
     {
         $newRoots = [];
@@ -172,5 +191,16 @@ class Menu extends \yii\base\Widget
             $this->view->renderFile($this->_asset->getFile($view)),
             $placeholders
         );
+    }
+
+    /**
+     * @return string
+     */
+    public function generateHash()
+    {
+        return strtr('menu-{md5}-{version}', [
+            '{version}' => Composer::getVersion('dynamikaweb/yii2-adaptive-menu'),
+            '{md5}' => md5(json_encode($this->items)),
+        ]);
     }
 }
