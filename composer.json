@@ -24,7 +24,7 @@
     "require": {
         "php": ">=7.0",
         "yiisoft/yii2": "*",
-        "composer-runtime-api": "^2.0"
+        "composer-runtime-api": "*"
     },
     "autoload": {
         "psr-4": {
