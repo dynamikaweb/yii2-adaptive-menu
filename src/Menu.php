@@ -197,10 +197,11 @@ class Menu extends \yii\base\Widget
      */
     public function generateHash()
     {
-        return strtr('menu-{hash_items}-{hash_assets}-{lastmod}', [
+        return strtr('menu-{hash_items}-{hash_assets}-{lastmod}-{id}', [
             '{hash_assets}' => md5($this->_asset->touchTimes),
             '{hash_items}' => md5(json_encode($this->items)),
             '{lastmod}' => getlastmod(),
+            '{id}' => $this->getId()
         ]);
     }
 }
