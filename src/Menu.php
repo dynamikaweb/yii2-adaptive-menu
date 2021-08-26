@@ -2,7 +2,6 @@
 
 namespace dynamikaweb\adaptive;
 
-use Composer\InstalledVersions as Composer;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
 use yii\helpers\Html;
@@ -198,9 +197,10 @@ class Menu extends \yii\base\Widget
      */
     public function generateHash()
     {
-        return strtr('menu-{md5}-{version}', [
-            '{version}' => Composer::getVersion('dynamikaweb/yii2-adaptive-menu'),
-            '{md5}' => md5(json_encode($this->items)),
+        return strtr('menu-{hash_items}-{hash_assets}-{lastmod}', [
+            '{hash_assets}' => md5($this->_asset->touchTimes),
+            '{hash_items}' => md5(json_encode($this->items)),
+            '{lastmod}' => getlastmod(),
         ]);
     }
 }

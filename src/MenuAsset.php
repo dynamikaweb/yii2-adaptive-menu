@@ -21,8 +21,28 @@ class MenuAsset extends \yii\web\AssetBundle
         'script.js',
     ];
 
+    /**
+     * return file exactly patch
+     *
+     * @param string $view
+     * @return string
+     */
     public function getFile($view) 
     {
         return "{$this->sourcePath}/{$this->files[$view]}"; 
+    }
+
+    /**
+     * Concat asset file modified times
+     *
+     * @return string
+     */
+    public function getTouchTimes()
+    {
+        return implode('-', array_map(function($file) {
+            return filemtime($this->getFile($file));
+        },
+            array_keys($this->files)
+        ));
     }
 }
