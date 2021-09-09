@@ -142,8 +142,4 @@
 		visibility: initial;
 		display: none ;
 	}
-
-	.dynamika-menu-li-root:hover .dynamika-menu-span-items{
-		display: none;
-	}
 }
